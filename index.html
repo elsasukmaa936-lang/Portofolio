@@ -267,6 +267,22 @@
   <div class="accent-line"></div>
   <p class="section-sub">Proyek embedded systems, robotika, dan jaringan komputer yang telah dikerjakan.</p>
 
+  <!-- 0. ROBOT NAIK TANGGA -->
+  <div class="project-card">
+    <span class="tag">2026</span>
+    <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
+    <div class="media-row">
+      <img src="robot-naik-tangga.jpg" alt="Robot naik tangga dengan roda segitiga custom">
+      <img src="robot-naik-tangga2.jpg" alt="Detail mekanisme roda segitiga robot naik tangga">
+    </div>
+    <h3>Robot Naik Tangga dengan Roda Segitiga Custom</h3>
+    <ul>
+      <li>Robot mobile yang mampu menaiki anak tangga menggunakan mekanisme roda berbentuk segitiga rancangan sendiri, didesain agar sisi-sisi roda dapat mencengkeram tepi anak tangga secara bertahap saat berputar.</li>
+      <li>Dikendalikan oleh mikrokontroler ESP32 dengan motor driver L298N untuk mengatur torsi dan arah putaran motor DC penggerak roda.</li>
+      <li>Tantangan utama pada penyeimbangan torsi motor agar roda segitiga tidak slip saat mencengkeram permukaan tangga di berbagai sudut kemiringan.</li>
+    </ul>
+  </div>
+
   <!-- 1. GESTUR WAJAH -->
   <div class="project-card">
     <span class="tag">Juni 2026</span>
@@ -288,7 +304,7 @@
   <div class="project-card">
     <span class="tag">Juni 2026</span>
     <div class="project-media">
-      <img src="diagram-termo.png" alt="Diagram skematik termometer nirsentuh">
+      <img src="diagram-termo.png" alt="Diagram skematik termometer nirsentuh" class="fit-contain">
     </div>
     <h3>Termometer Nirsentuh Higienis untuk Dapur Profesional</h3>
     <ul>
@@ -440,6 +456,34 @@
     <ul>
       <li>Prototipe sistem proteksi kebakaran otomatis pakai sensor IR & Arduino.</li>
       <li>Integrasi deteksi, alarm, dan aktuasi pemadam dalam satu sekuens closed-loop.</li>
+    </ul>
+  </div>
+
+  <!-- 10. MOBIL RC BLUETOOTH -->
+  <div class="project-card">
+    <span class="tag">2026</span>
+    <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
+    <div class="project-media">
+      <img src="rc.jpg" alt="Mobil RC dikendalikan via Bluetooth">
+    </div>
+    <h3>Mobil RC Berbasis Kendali Bluetooth</h3>
+    <ul>
+      <li>Mobil remote control yang dikendalikan dari aplikasi Android melalui koneksi Bluetooth, menggunakan modul HC-05/HC-06.</li>
+      <li>Mikrokontroler Arduino/ESP32 menerima perintah arah dan kecepatan dari aplikasi, lalu meneruskannya ke motor driver penggerak roda.</li>
+    </ul>
+  </div>
+
+  <!-- 11. WATER LEVEL CONTROL PID -->
+  <div class="project-card">
+    <span class="tag">2026</span>
+    <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
+    <div class="project-media">
+      <img src="watel-level.jpg" alt="Sistem water level control dengan PID dan sensor ToF">
+    </div>
+    <h3>Water Level Control Berbasis PID dengan Sensor ToF</h3>
+    <ul>
+      <li>Sistem kendali ketinggian air otomatis menggunakan sensor Time-of-Flight (ToF) untuk membaca level air secara presisi.</li>
+      <li>Algoritma kendali PID pada Arduino digunakan untuk mengatur kecepatan pompa agar ketinggian air tetap stabil pada setpoint yang ditentukan, meminimalkan overshoot dan osilasi.</li>
     </ul>
   </div>
 </section>
