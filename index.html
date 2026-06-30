@@ -50,14 +50,18 @@
     background:linear-gradient(90deg,var(--c1),var(--c2));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .nav-contact{display:flex;gap:10px;}
-  .nav-contact a{
-    display:flex;align-items:center;justify-content:center;
-    width:36px;height:36px;border-radius:50%;
-    background:var(--card);border:1px solid var(--border);
-    color:var(--text);text-decoration:none;font-size:16px;transition:.25s;
+  .top-contact{
+    display:flex;justify-content:center;gap:24px;flex-wrap:wrap;
+    padding:8px 6%;font-size:13px;
+    background:rgba(110,231,255,0.06);
+    border-bottom:1px solid var(--border);
+    position:relative;z-index:51;
   }
-  .nav-contact a:hover{border-color:var(--c1);transform:translateY(-2px);background:rgba(110,231,255,0.1);}
+  .top-contact a{
+    color:var(--text);text-decoration:none;display:flex;align-items:center;gap:6px;
+    transition:.25s;
+  }
+  .top-contact a:hover{color:var(--c1);}
   nav ul{display:flex;gap:28px;list-style:none;align-items:center;}
   nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative;transition:.25s;}
   nav a:hover{color:var(--text);}
@@ -171,7 +175,8 @@
     background:#000;
   }
   .media-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
-  .media-row img{width:100%;height:220px;object-fit:cover;border-radius:10px;border:1px solid var(--border);}
+  .media-row img{width:100%;height:220px;object-fit:contain;background:#000;border-radius:10px;border:1px solid var(--border);}
+  .project-media img.fit-contain{height:auto;max-height:420px;object-fit:contain;background:#000;}
   .project-img-placeholder{
     width:100%;height:170px;border-radius:10px;
     background:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 10px, rgba(255,255,255,0.06) 10px 20px);
@@ -220,6 +225,11 @@
 <div class="blob blob2"></div>
 <div class="blob blob3"></div>
 
+<div class="top-contact">
+  <a href="https://wa.me/6285743381548" target="_blank" aria-label="WhatsApp" title="WhatsApp">📱 +62 857-4338-1548</a>
+  <a href="mailto:elsasukmaa936@gmail.com" aria-label="Email" title="Email">✉️ elsasukmaa936@gmail.com</a>
+</div>
+
 <nav>
   <div class="logo">ELSA SUKMA</div>
   <ul>
@@ -228,12 +238,6 @@
     <li><a href="#projects">Proyek</a></li>
     <li><a href="#experience">Pengalaman</a></li>
     <li><a href="#education">Pendidikan</a></li>
-    <li>
-      <div class="nav-contact">
-        <a href="https://wa.me/6285743381548" target="_blank" aria-label="WhatsApp" title="WhatsApp">📱</a>
-        <a href="mailto:elsasukmaa936@gmail.com" aria-label="Email" title="Email">✉️</a>
-      </div>
-    </li>
   </ul>
 </nav>
 
@@ -311,7 +315,7 @@
   <!-- 3. SMART IRRIGATION -->
   <div class="project-card">
     <span class="tag">2026</span>
-    <span class="tag-role">Kelompok • Kontribusi Campuran</span>
+    <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
     <div class="media-row">
       <img src="smart-irrigation.jpeg" alt="Foto alat smart irrigation">
       <img src="smart-irrigation2.jpeg" alt="Foto tim dengan alat smart irrigation">
@@ -321,23 +325,22 @@
       <li>Sistem penyiraman otomatis menggunakan sensor soil moisture dan raindrop sensor untuk mendeteksi kelembapan tanah dan curah hujan secara real-time.</li>
       <li>Logika kendali otomatis menyalakan/mematikan pompa berdasarkan ambang batas kelembapan, dengan raindrop sensor sebagai pencegah penyiraman saat hujan turun.</li>
       <li>Mikrokontroler ESP8266 sebagai pusat akuisisi data sensor dan aktuasi pompa.</li>
-      <li>Proyek telah selesai dikembangkan dan diuji.</li>
     </ul>
   </div>
 
   <!-- 4. SUPERLAB JARINGAN -->
   <div class="project-card">
     <span class="tag">2026</span>
-    <span class="tag-role">Kelompok • Lead Implementer</span>
+    <span class="tag-role">Proyek Mata Kuliah Jaringan Komputer</span>
     <div class="project-media">
-      <img src="topologi-cisco.png" alt="Topologi jaringan Superlab pada Cisco Packet Tracer">
+      <img src="topologi-cisco.png" alt="Topologi jaringan Superlab pada Cisco Packet Tracer" class="fit-contain">
     </div>
     <h3>Superlab — Rancang Bangun Jaringan Enterprise Berbasis Cisco Packet Tracer</h3>
     <ul>
       <li>Merancang dan mengimplementasikan topologi jaringan skala perusahaan dengan 9 segmen VLAN, 3 router, dan 2 Core Switch menggunakan Cisco Packet Tracer.</li>
       <li>Konfigurasi penuh end-to-end: VLAN tagging & trunking 802.1Q, DHCP per VLAN, routing dinamis OSPF multi-router (area 0), serta Extended ACL untuk membatasi akses antar VLAN ke server.</li>
       <li>Membangun dan mengonfigurasi layanan jaringan: DNS Server, Web Server (custom HTML), Email Server (SMTP/POP3), dan IoT Server untuk kontrol RFID Reader, smart door lock, dan AC otomatis.</li>
-      <li>Bertanggung jawab penuh atas seluruh proses konfigurasi teknis dalam proyek kelompok, mencakup desain addressing, troubleshooting konektivitas, hingga dokumentasi jobsheet.</li>
+      <li>Mengerjakan seluruh proses konfigurasi teknis secara mandiri, mencakup desain addressing, troubleshooting konektivitas, hingga dokumentasi jobsheet.</li>
     </ul>
   </div>
 
