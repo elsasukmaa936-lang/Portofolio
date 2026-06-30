@@ -50,7 +50,15 @@
     background:linear-gradient(90deg,var(--c1),var(--c2));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  nav ul{display:flex;gap:28px;list-style:none;}
+  .nav-contact{display:flex;gap:10px;}
+  .nav-contact a{
+    display:flex;align-items:center;justify-content:center;
+    width:36px;height:36px;border-radius:50%;
+    background:var(--card);border:1px solid var(--border);
+    color:var(--text);text-decoration:none;font-size:16px;transition:.25s;
+  }
+  .nav-contact a:hover{border-color:var(--c1);transform:translateY(-2px);background:rgba(110,231,255,0.1);}
+  nav ul{display:flex;gap:28px;list-style:none;align-items:center;}
   nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative;transition:.25s;}
   nav a:hover{color:var(--text);}
   nav a::after{
@@ -194,22 +202,10 @@
   .edu-card h3{font-size:15px;}
   .edu-card .meta{color:var(--c4);font-size:12px;margin:6px 0 8px;font-weight:600;}
   .edu-card p{color:var(--muted);font-size:13px;}
-  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:10px;}
-  .contact-card{
-    background:var(--card);border:1px solid var(--border);border-radius:14px;
-    padding:22px;display:flex;align-items:center;gap:14px;text-decoration:none;
-    color:var(--text);transition:.3s;
-  }
-  .contact-card:hover{transform:translateY(-4px);border-color:var(--c1);}
-  .contact-icon{
-    width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-    background:rgba(110,231,255,0.12);flex-shrink:0;font-size:18px;
-  }
-  .contact-card .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
-  .contact-card .value{font-size:14px;font-weight:600;}
   footer{text-align:center;padding:34px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);position:relative;z-index:1;}
   @media(max-width:700px){
-    nav ul{display:none;}
+    nav ul li:not(:last-child){display:none;}
+    nav ul{gap:0;}
     .hero{flex-direction:column-reverse;text-align:center;}
     .hero-text p{margin:0 auto 26px;}
     .btn-row{justify-content:center;}
@@ -232,7 +228,12 @@
     <li><a href="#projects">Proyek</a></li>
     <li><a href="#experience">Pengalaman</a></li>
     <li><a href="#education">Pendidikan</a></li>
-    <li><a href="#contact">Kontak</a></li>
+    <li>
+      <div class="nav-contact">
+        <a href="https://wa.me/6285743381548" target="_blank" aria-label="WhatsApp" title="WhatsApp">📱</a>
+        <a href="mailto:elsasukmaa936@gmail.com" aria-label="Email" title="Email">✉️</a>
+      </div>
+    </li>
   </ul>
 </nav>
 
@@ -251,8 +252,6 @@
     </div>
     <div class="btn-row">
       <a class="btn" href="https://linkedin.com/in/elsasukmahapsari" target="_blank">Lihat LinkedIn →</a>
-      <a class="btn-outline" href="https://wa.me/6285743381548" target="_blank">WhatsApp</a>
-      <a class="btn-outline" href="mailto:elsasukmaa936@gmail.com">Email</a>
     </div>
   </div>
   <div class="hero-img reveal show">
@@ -503,35 +502,6 @@
     <h3>SMK Teknik Komputer Jaringan</h3>
     <div class="meta">SMK TUNAS HARAPAN, PATI • JUN 2020 - JUL 2023</div>
     <p>Spesialisasi topologi jaringan Cisco, konfigurasi Mikrotik (NAT, DHCP, firewall), troubleshooting jaringan.</p>
-  </div>
-</section>
-
-<section id="contact" class="reveal">
-  <h2 class="section-title">Kontak</h2>
-  <div class="accent-line"></div>
-  <p class="section-sub">Terbuka untuk peluang magang, kolaborasi proyek, atau diskusi teknis.</p>
-  <div class="contact-grid">
-    <a class="contact-card" href="https://wa.me/6285743381548" target="_blank">
-      <div class="contact-icon">📱</div>
-      <div>
-        <div class="label">WhatsApp</div>
-        <div class="value">+62 857-4338-1548</div>
-      </div>
-    </a>
-    <a class="contact-card" href="mailto:elsasukmaa936@gmail.com">
-      <div class="contact-icon">✉️</div>
-      <div>
-        <div class="label">Email</div>
-        <div class="value">elsasukmaa936@gmail.com</div>
-      </div>
-    </a>
-    <a class="contact-card" href="https://linkedin.com/in/elsasukmahapsari" target="_blank">
-      <div class="contact-icon">🔗</div>
-      <div>
-        <div class="label">LinkedIn</div>
-        <div class="value">elsasukmahapsari</div>
-      </div>
-    </a>
   </div>
 </section>
 
