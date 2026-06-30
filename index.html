@@ -154,6 +154,7 @@
   .project-media{
     width:100%;border-radius:10px;margin-bottom:16px;overflow:hidden;
     border:1px solid var(--border);background:#000;
+    min-height:120px;position:relative;
   }
   .project-media img{
     width:100%;height:220px;object-fit:cover;display:block;
@@ -244,7 +245,7 @@
     </div>
   </div>
   <div class="hero-img reveal show">
-    <img src="foto-profil.png" alt="Foto Elsa Sukma Hapsari">
+    <img src="foto-profil.png" alt="Foto Elsa Sukma Hapsari" loading="eager">
   </div>
 </section>
 
@@ -271,8 +272,7 @@
   <div class="project-card">
     <span class="tag">Juni 2026</span>
     <div class="project-media">
-      <video controls muted loop poster="">
-        <source src="gestur-wajah.mp4" type="video/mp4">
+      <video controls muted loop preload="none" data-src="gestur-wajah.mp4" poster="">
       </video>
     </div>
     <h3>Alat Bantu Gerak Difabel Berbasis Gestur Wajah</h3>
@@ -288,8 +288,7 @@
   <div class="project-card">
     <span class="tag">Mei 2026</span>
     <div class="project-media">
-      <video controls muted loop poster="">
-        <source src="turtlebot-slam.mp4" type="video/mp4">
+      <video controls muted loop preload="none" data-src="turtlebot-slam.mp4" poster="">
       </video>
     </div>
     <h3>Robot Pengikut TurtleBot3 dengan Navigasi SLAM</h3>
@@ -304,7 +303,7 @@
   <div class="project-card">
     <span class="tag">Juni 2026</span>
     <div class="project-media">
-      <img src="diagram-termo.png" alt="Diagram skematik termometer nirsentuh" class="fit-contain">
+      <img src="diagram-termo.png" alt="Diagram skematik termometer nirsentuh" class="fit-contain" loading="lazy">
     </div>
     <h3>Termometer Nirsentuh Higienis untuk Dapur Profesional</h3>
     <ul>
@@ -318,8 +317,8 @@
     <span class="tag">2026</span>
     <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
     <div class="media-row">
-      <img src="robot-naik-tangga.jpeg" alt="Robot naik tangga dengan roda segitiga custom">
-      <img src="robot-naik-tangga2.jpeg" alt="Detail mekanisme roda segitiga robot naik tangga">
+      <img src="robot-naik-tangga.jpeg" alt="Robot naik tangga dengan roda segitiga custom" loading="lazy">
+      <img src="robot-naik-tangga2.jpeg" alt="Detail mekanisme roda segitiga robot naik tangga" loading="lazy">
     </div>
     <h3>Robot Naik Tangga dengan Roda Segitiga Custom</h3>
     <ul>
@@ -334,7 +333,7 @@
     <span class="tag">2026</span>
     <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
     <div class="project-media">
-      <img src="rc.jpg" alt="Mobil RC dikendalikan via Bluetooth" class="fit-contain">
+      <img src="rc.jpg" alt="Mobil RC dikendalikan via Bluetooth" class="fit-contain" loading="lazy">
     </div>
     <h3>Mobil RC Berbasis Kendali Bluetooth</h3>
     <ul>
@@ -348,7 +347,7 @@
     <span class="tag">2026</span>
     <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
     <div class="project-media">
-      <img src="watel-level.jpeg" alt="Sistem water level control dengan PID dan sensor ToF" class="fit-contain">
+      <img src="watel-level.jpeg" alt="Sistem water level control dengan PID dan sensor ToF" class="fit-contain" loading="lazy">
     </div>
     <h3>Water Level Control Berbasis PID dengan Sensor ToF</h3>
     <ul>
@@ -362,8 +361,8 @@
     <span class="tag">2026</span>
     <span class="tag-role">Proyek Tim • Kontribusi Campuran</span>
     <div class="media-row">
-      <img src="smart-irrigation.jpeg" alt="Foto alat smart irrigation">
-      <img src="smart-irrigation2.jpeg" alt="Foto tim dengan alat smart irrigation">
+      <img src="smart-irrigation.jpeg" alt="Foto alat smart irrigation" loading="lazy">
+      <img src="smart-irrigation2.jpeg" alt="Foto tim dengan alat smart irrigation" loading="lazy">
     </div>
     <h3>Smart Irrigation System Berbasis ESP8266</h3>
     <ul>
@@ -378,7 +377,7 @@
     <span class="tag">2026</span>
     <span class="tag-role">Proyek Mata Kuliah Jaringan Komputer</span>
     <div class="project-media">
-      <img src="topologi-cisco.png" alt="Topologi jaringan Superlab pada Cisco Packet Tracer" class="fit-contain">
+      <img src="topologi-cisco.png" alt="Topologi jaringan Superlab pada Cisco Packet Tracer" class="fit-contain" loading="lazy">
     </div>
     <h3>Superlab — Rancang Bangun Jaringan Enterprise Berbasis Cisco Packet Tracer</h3>
     <ul>
@@ -393,8 +392,8 @@
   <div class="project-card">
     <span class="tag">2025</span>
     <div class="media-row">
-      <img src="program-banjir.jpeg" alt="Program ladder logic pencegah banjir">
-      <img src="hmi-banjir.jpeg" alt="Desain HMI pencegah banjir">
+      <img src="program-banjir.jpeg" alt="Program ladder logic pencegah banjir" loading="lazy">
+      <img src="hmi-banjir.jpeg" alt="Desain HMI pencegah banjir" loading="lazy">
     </div>
     <h3>Sistem Otomasi Penanganan Banjir</h3>
     <ul>
@@ -407,7 +406,7 @@
   <div class="project-card">
     <span class="tag">2025</span>
     <div class="project-media">
-      <img src="foto-sigma.jpeg" alt="Trainer kit PLC-HMI Sigma Innovation Community">
+      <img src="foto-sigma.jpeg" alt="Trainer kit PLC-HMI Sigma Innovation Community" loading="lazy">
     </div>
     <h3>Modul Pelatihan Hardware PLC-HMI</h3>
     <ul>
@@ -420,8 +419,7 @@
   <div class="project-card">
     <span class="tag">2024</span>
     <div class="project-media">
-      <video controls muted loop poster="">
-        <source src="pencegah-kebakaran.mp4" type="video/mp4">
+      <video controls muted loop preload="none" data-src="pencegah-kebakaran.mp4" poster="">
       </video>
     </div>
     <h3>Sistem Deteksi & Pemadam Kebakaran</h3>
@@ -498,7 +496,7 @@
       <h3>PLC-HMI Research Lead & Pelatih Teknis</h3>
       <div class="org">Sigma Innovation Community — Divisi R&D (PT Sigma Global Innovation)</div>
       <div class="timeline-media">
-        <img src="foto-sigma.jpeg" alt="Kegiatan Sigma Innovation Community">
+        <img src="foto-sigma.jpeg" alt="Kegiatan Sigma Innovation Community" loading="lazy">
       </div>
       <ul>
         <li>Memimpin pelatihan otomasi industri untuk 20+ peserta, peningkatan kompetensi rata-rata 85%.</li>
@@ -544,11 +542,41 @@
 </footer>
 
 <script>
+  // Reveal-on-scroll: rootMargin lebih besar supaya elemen muncul lebih awal,
+  // dan ada fallback timeout supaya konten tidak nyangkut "invisible" kalau observer telat fire.
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
-  },{threshold:0.15});
+  },{threshold:0.05, rootMargin:'0px 0px -10% 0px'});
   reveals.forEach(el=>obs.observe(el));
+
+  // Fallback: paksa semua section tampil setelah 2.5 detik kalau masih ada yang belum 'show'
+  // (jaga-jaga kalau ada elemen yang observer-nya gagal trigger karena layout shift dari media berat)
+  setTimeout(()=>{
+    reveals.forEach(el=>el.classList.add('show'));
+  }, 2500);
+
+  // Lazy-load video: src video baru di-set ketika section proyek mendekati viewport,
+  // supaya browser tidak mendownload semua video sekaligus saat halaman pertama dibuka.
+  const videos = document.querySelectorAll('video[data-src]');
+  const videoObs = new IntersectionObserver((entries, observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const v = entry.target;
+        const src = v.getAttribute('data-src');
+        if(src){
+          const source = document.createElement('source');
+          source.src = src;
+          source.type = 'video/mp4';
+          v.appendChild(source);
+          v.load();
+          v.removeAttribute('data-src');
+        }
+        observer.unobserve(v);
+      }
+    });
+  }, {rootMargin:'200px 0px'});
+  videos.forEach(v=>videoObs.observe(v));
 </script>
 
 </body>
