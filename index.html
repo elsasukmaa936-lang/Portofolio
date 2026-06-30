@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elsa Sukma Hapsari - Embedded & Robotics Portfolio</title>
+<style>
+  :root{
+    --bg:#0a0b10;
+    --card:rgba(255,255,255,0.04);
+    --border:rgba(255,255,255,0.08);
+    --text:#eef0f5;
+    --muted:#9099ad;
+    --c1:#6ee7ff;
+    --c2:#a78bfa;
+    --c3:#ff8fb3;
+    --c4:#7dffb3;
+    --c5:#ffd479;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI',Arial,sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
+    position:relative;
+  }
+  .blob{
+    position:fixed;border-radius:50%;filter:blur(90px);opacity:0.25;
+    z-index:0;pointer-events:none;animation:float 16s ease-in-out infinite;
+  }
+  .blob1{width:420px;height:420px;background:var(--c1);top:-100px;left:-100px;}
+  .blob2{width:380px;height:380px;background:var(--c2);top:30%;right:-150px;animation-delay:-5s;}
+  .blob3{width:320px;height:320px;background:var(--c3);bottom:-100px;left:20%;animation-delay:-10s;}
+  @keyframes float{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(40px,-30px) scale(1.1);}
+  }
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,11,16,0.7);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 6%;
+  }
+  nav .logo{font-weight:800;letter-spacing:1px;
+    background:linear-gradient(90deg,var(--c1),var(--c2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  nav ul{display:flex;gap:28px;list-style:none;}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;position:relative;transition:.25s;}
+  nav a:hover{color:var(--text);}
+  nav a::after{
+    content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;
+    background:linear-gradient(90deg,var(--c1),var(--c2));transition:.3s;
+  }
+  nav a:hover::after{width:100%;}
+  section{padding:90px 6%;max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.show{opacity:1;transform:translateY(0);}
+  .hero{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:40px;min-height:78vh;flex-wrap:wrap;
+  }
+  .hero-text .tagline{
+    display:inline-block;font-size:12px;letter-spacing:2px;color:var(--c1);
+    border:1px solid var(--border);padding:6px 14px;border-radius:20px;margin-bottom:18px;
+  }
+  .hero-text h1{font-size:46px;font-weight:800;margin-bottom:10px;line-height:1.15;}
+  .hero-text .role{
+    font-size:18px;font-weight:600;margin-bottom:18px;
+    background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    background-size:200% auto;animation:shine 5s linear infinite;
+  }
+  @keyframes shine{to{background-position:200% center;}}
+  .hero-text p{color:var(--muted);max-width:480px;margin-bottom:26px;}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+  .badge{
+    background:var(--card);border:1px solid var(--border);
+    padding:7px 15px;border-radius:20px;font-size:12px;color:var(--text);
+    transition:.25s;
+  }
+  .badge:hover{border-color:var(--c1);transform:translateY(-2px);}
+  .btn{
+    display:inline-block;background:linear-gradient(90deg,var(--c1),var(--c2));
+    color:#0a0b10;padding:13px 28px;border-radius:10px;text-decoration:none;
+    font-weight:700;font-size:14px;transition:.3s;
+  }
+  .btn:hover{box-shadow:0 8px 24px rgba(110,231,255,0.35);transform:translateY(-2px);}
+  .hero-img{
+    width:270px;height:270px;border-radius:20px;flex-shrink:0;
+    background:linear-gradient(160deg, rgba(110,231,255,0.12), rgba(167,139,250,0.12));
+    border:1px solid var(--border);
+    position:relative;overflow:hidden;
+    animation:floatImg 6s ease-in-out infinite;
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:2;}
+  @keyframes floatImg{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  .hero-img::before{
+    content:'';position:absolute;inset:0;z-index:1;
+    background:conic-gradient(from 0deg, var(--c1), var(--c2), var(--c3), var(--c1));
+    opacity:0.15;animation:spin 8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  h2.section-title{font-size:28px;margin-bottom:8px;font-weight:800;}
+  .section-sub{color:var(--muted);font-size:14px;margin-bottom:40px;}
+  .accent-line{width:50px;height:4px;border-radius:4px;margin-bottom:18px;
+    background:linear-gradient(90deg,var(--c1),var(--c2));}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+  .skill-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:22px;transition:.3s;
+    border-top:3px solid transparent;
+  }
+  .skill-card:hover{transform:translateY(-6px);background:rgba(255,255,255,0.06);}
+  .skill-card:nth-child(1){border-top-color:var(--c1);}
+  .skill-card:nth-child(2){border-top-color:var(--c2);}
+  .skill-card:nth-child(3){border-top-color:var(--c3);}
+  .skill-card:nth-child(4){border-top-color:var(--c4);}
+  .skill-card:nth-child(5){border-top-color:var(--c5);}
+  .skill-card h3{font-size:15px;margin-bottom:10px;}
+  .skill-card p{font-size:13px;color:var(--muted);}
+  .project-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:16px;padding:26px;margin-bottom:22px;
+    transition:.3s;position:relative;overflow:hidden;
+  }
+  .project-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.18);
+    box-shadow:0 12px 30px rgba(0,0,0,0.35);}
+  .project-card .tag{display:inline-block;font-size:11px;padding:5px 12px;border-radius:6px;margin-bottom:12px;font-weight:700;}
+  .project-card:nth-child(odd) .tag{background:rgba(110,231,255,0.12);color:var(--c1);}
+  .project-card:nth-child(even) .tag{background:rgba(167,139,250,0.12);color:var(--c2);}
+  .project-card h3{font-size:18px;margin-bottom:10px;}
+  .project-card ul{margin-left:18px;color:var(--muted);font-size:14px;}
+  .project-card ul li{margin-bottom:6px;}
+  .project-media{
+    width:100%;border-radius:10px;margin-bottom:16px;overflow:hidden;
+    border:1px solid var(--border);background:#000;
+  }
+  .project-media img, .project-media video{
+    width:100%;height:220px;object-fit:cover;display:block;
+  }
+  .media-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+  .media-row img{width:100%;height:220px;object-fit:cover;border-radius:10px;border:1px solid var(--border);}
+  .project-img-placeholder{
+    width:100%;height:170px;border-radius:10px;
+    background:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 10px, rgba(255,255,255,0.06) 10px 20px);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:12px;margin-bottom:16px;
+    border:1px dashed var(--border);
+  }
+  .timeline{border-left:2px solid var(--border);padding-left:28px;position:relative;}
+  .timeline-item{margin-bottom:36px;position:relative;}
+  .timeline-item::before{
+    content:'';position:absolute;left:-35px;top:4px;
+    width:12px;height:12px;border-radius:50%;
+    background:linear-gradient(135deg,var(--c1),var(--c2));
+    box-shadow:0 0 0 4px rgba(110,231,255,0.12);
+  }
+  .timeline-item .date{color:var(--c1);font-size:12px;font-weight:700;letter-spacing:.5px;}
+  .timeline-item h3{font-size:17px;margin:6px 0;}
+  .timeline-item .org{color:var(--muted);font-size:13px;margin-bottom:10px;}
+  .timeline-item ul{margin-left:18px;color:var(--muted);font-size:14px;}
+  .timeline-item ul li{margin-bottom:4px;}
+  .timeline-media{width:220px;border-radius:10px;margin-bottom:12px;border:1px solid var(--border);overflow:hidden;}
+  .timeline-media img{width:100%;display:block;}
+  .edu-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:22px;margin-bottom:16px;transition:.3s;
+  }
+  .edu-card:hover{border-color:var(--c4);transform:translateX(4px);}
+  .edu-card h3{font-size:15px;}
+  .edu-card .meta{color:var(--c4);font-size:12px;margin:6px 0 8px;font-weight:600;}
+  .edu-card p{color:var(--muted);font-size:13px;}
+  footer{text-align:center;padding:34px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);position:relative;z-index:1;}
+  @media(max-width:700px){
+    nav ul{display:none;}
+    .hero{flex-direction:column-reverse;text-align:center;}
+    .hero-text p{margin:0 auto 26px;}
+    .timeline{padding-left:22px;}
+    .media-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<nav>
+  <div class="logo">ELSA SUKMA</div>
+  <ul>
+    <li><a href="#hero">Profil</a></li>
+    <li><a href="#skills">Kompetensi</a></li>
+    <li><a href="#projects">Proyek</a></li>
+    <li><a href="#experience">Pengalaman</a></li>
+    <li><a href="#education">Pendidikan</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-text reveal show">
+    <span class="tagline">EMBEDDED • ROBOTICS • AUTOMATION</span>
+    <h1>Elsa Sukma Hapsari</h1>
+    <div class="role">Embedded Systems & Robotics Engineer</div>
+    <p>Mahasiswi Semester 6 Teknologi Rekayasa Elektronika, Politeknik Negeri Semarang (IPK 3.72/4.00). Fokus pada sistem embedded, robotika, dan otomasi industri berbasis PLC/HMI.</p>
+    <div class="badges">
+      <span class="badge">Raspberry Pi</span>
+      <span class="badge">ROS2 / Nav2</span>
+      <span class="badge">PLC & HMI</span>
+      <span class="badge">OpenCV / MediaPipe</span>
+      <span class="badge">Mikrotik / Cisco</span>
+    </div>
+    <a class="btn" href="https://linkedin.com/in/elsasukmahapsari" target="_blank">Lihat LinkedIn →</a>
+  </div>
+  <div class="hero-img reveal show">
+    <img src="foto-profil.png" alt="Foto Elsa Sukma Hapsari">
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <h2 class="section-title">Kompetensi Inti</h2>
+  <div class="accent-line"></div>
+  <p class="section-sub">Keahlian teknis di bidang otomasi, robotika, dan jaringan.</p>
+  <div class="skills-grid">
+    <div class="skill-card"><h3>PLC / Otomasi</h3><p>Omron CX-Programmer, Schneider EcoStruxure, Haiwell, Ladder Logic, IEC 61131-3, Factory IO.</p></div>
+    <div class="skill-card"><h3>HMI / SCADA</h3><p>NB Designer, Haiwell Cloud SCADA, CX-Designer.</p></div>
+    <div class="skill-card"><h3>Robotika & Embedded</h3><p>ROS2 Nav2, SLAM Mapping, TurtleBot3, Raspberry Pi, OpenCR, Arduino, ESP32.</p></div>
+    <div class="skill-card"><h3>Hardware</h3><p>Wiring, desain skematik, integrasi sensor.</p></div>
+    <div class="skill-card"><h3>Jaringan</h3><p>Mikrotik, Cisco, DHCP, VLAN, Routing.</p></div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <h2 class="section-title">Proyek Teknis</h2>
+  <div class="accent-line"></div>
+  <p class="section-sub">Proyek embedded systems dan robotika yang telah dikerjakan.</p>
+
+  <!-- 1. GESTUR WAJAH -->
+  <div class="project-card">
+    <span class="tag">Juni 2026</span>
+    <div class="project-media">
+      <video controls muted loop poster="">
+        <source src="gestur-wajah.mp4" type="video/mp4">
+      </video>
+    </div>
+    <h3>Alat Bantu Gerak Difabel Berbasis Gestur Wajah</h3>
+    <ul>
+      <li>Simulasi kursi roda cerdas untuk penyandang kelumpuhan, dikendalikan via ekspresi/gestur wajah tanpa kontak fisik.</li>
+      <li>Deteksi gestur wajah real-time menggunakan MediaPipe & OpenCV pada Raspberry Pi 4B.</li>
+      <li>Sensor ultrasonik HC-SR04 untuk obstacle avoidance otomatis.</li>
+      <li>Diuji pada robot mobil fisik (trainer kit) sebagai proof-of-concept.</li>
+    </ul>
+  </div>
+
+  <!-- 2. TERMOMETER NIRSENTUH -->
+  <div class="project-card">
+    <span class="tag">Juni 2026</span>
+    <div class="project-media">
+      <img src="diagram-termo.png" alt="Diagram skematik termometer nirsentuh">
+    </div>
+    <h3>Termometer Nirsentuh Higienis untuk Dapur Profesional</h3>
+    <ul>
+      <li>Alat pengukur suhu makanan nirsentuh berbasis Raspberry Pi Pico & sensor MLX90614 (GY906).</li>
+      <li>Menghilangkan risiko kontaminasi silang dibanding termo kontak konvensional.</li>
+    </ul>
+  </div>
+
+  <!-- 3. TURTLEBOT3 SLAM -->
+  <div class="project-card">
+    <span class="tag">Mei 2026</span>
+    <div class="project-media">
+      <video controls muted loop poster="">
+        <source src="turtlebot-slam.mp4" type="video/mp4">
+      </video>
+    </div>
+    <h3>Robot Pengikut TurtleBot3 dengan Navigasi SLAM</h3>
+    <ul>
+      <li>Robot pengikut otonom berbasis TurtleBot3, stack ROS2 Nav2, Raspberry Pi + OpenCR.</li>
+      <li>Pemetaan SLAM untuk lokalisasi real-time & perencanaan jalur otonom indoor.</li>
+      <li>Integrasi LiDAR dengan Nav2 untuk deteksi rintangan & rerouting dinamis.</li>
+    </ul>
+  </div>
+
+  <!-- 4. OTOMASI BANJIR -->
+  <div class="project-card">
+    <span class="tag">2025</span>
+    <div class="media-row">
+      <img src="program-banjir.jpg" alt="Program ladder logic pencegah banjir">
+      <img src="hmi-banjir.jpg" alt="Desain HMI pencegah banjir">
+    </div>
+    <h3>Sistem Otomasi Penanganan Banjir</h3>
+    <ul>
+      <li>Simulasi monitoring ketinggian air & sekuensing pompa pakai PLC Omron + HMI CX-Designer.</li>
+      <li>Logika kendali closed-loop yang dapat diterapkan ke otomasi proses industri nyata.</li>
+    </ul>
+  </div>
+
+  <!-- 5. CUCI MOBIL OTOMATIS -->
+  <div class="project-card">
+    <span class="tag">2025</span>
+    <div class="project-img-placeholder">Tambahkan foto/diagram proyek</div>
+    <h3>Sistem Cuci Mobil Otomatis</h3>
+    <ul>
+      <li>Otomasi terintegrasi sensor-aktuator pakai Ladder Logic & HMI NB Designer.</li>
+      <li>Kendali sekuens penuh dari deteksi kendaraan masuk hingga siklus cuci & pengeringan.</li>
+    </ul>
+  </div>
+
+  <!-- 6. MODUL PELATIHAN PLC-HMI -->
+  <div class="project-card">
+    <span class="tag">2025</span>
+    <div class="project-media">
+      <img src="foto-sigma.jpg" alt="Trainer kit PLC-HMI Sigma Innovation Community">
+    </div>
+    <h3>Modul Pelatihan Hardware PLC-HMI</h3>
+    <ul>
+      <li>Membangun kit trainer fisik dari komponen dasar — wiring, skematik, panel, integrasi sistem.</li>
+      <li>Diadopsi sebagai platform pembelajaran utama Sigma Innovation Community.</li>
+    </ul>
+  </div>
+
+  <!-- 7. DETEKSI & PEMADAM KEBAKARAN -->
+  <div class="project-card">
+    <span class="tag">2024</span>
+    <div class="project-media">
+      <video controls muted loop poster="">
+        <source src="pencegah-kebakaran.mp4" type="video/mp4">
+      </video>
+    </div>
+    <h3>Sistem Deteksi & Pemadam Kebakaran</h3>
+    <ul>
+      <li>Prototipe sistem proteksi kebakaran otomatis pakai sensor IR & Arduino.</li>
+      <li>Integrasi deteksi, alarm, dan aktuasi pemadam dalam satu sekuens closed-loop.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <h2 class="section-title">Pengalaman Organisasi & Kerja</h2>
+  <div class="accent-line"></div>
+  <p class="section-sub">Kepemimpinan teknis dan pengalaman kerja profesional.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="date">MAR 2024 - SEKARANG</div>
+      <h3>PLC-HMI Research Lead & Pelatih Teknis</h3>
+      <div class="org">Sigma Innovation Community — Divisi R&D (PT Sigma Global Innovation)</div>
+      <div class="timeline-media">
+        <img src="foto-sigma.jpg" alt="Kegiatan Sigma Innovation Community">
+      </div>
+      <ul>
+        <li>Memimpin pelatihan otomasi industri untuk 20+ peserta, peningkatan kompetensi rata-rata 85%.</li>
+        <li>Merakit hardware trainer kit PLC-HMI dari komponen dasar, memangkas waktu setup lab hingga 90%.</li>
+        <li>Menyusun dokumentasi teknis & panduan troubleshooting PLC/HMI Omron dan Haiwell.</li>
+        <li>Membimbing anggota junior dalam Ladder Logic, desain HMI, dan konsep kendali industri.</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="date">FEB 2022 - APR 2022</div>
+      <h3>Intern Technical Support</h3>
+      <div class="org">Alif Computer — Pati, Jawa Tengah</div>
+      <ul>
+        <li>Diagnostik hardware & software, tingkat resolusi kontak pertama ~90%.</li>
+        <li>Mengurangi rata-rata waktu penyelesaian perbaikan sebesar 30%.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="reveal">
+  <h2 class="section-title">Pendidikan & Sertifikasi</h2>
+  <div class="accent-line"></div>
+  <div class="edu-card">
+    <h3>Sarjana Terapan Teknologi Rekayasa Elektronika</h3>
+    <div class="meta">POLITEKNIK NEGERI SEMARANG • AGU 2023 - AGU 2027 (EST.) • IPK 3.72/4.00</div>
+    <p>Fokus: otomasi industri, pemrograman PLC/HMI, sistem embedded, integrasi IoT, kendali robotika.</p>
+  </div>
+  <div class="edu-card">
+    <h3>Sertifikat Kompetensi Nasional — KKNI Level II</h3>
+    <div class="meta">BNSP • MEI 2023</div>
+    <p>Bidang Teknik Komputer & Jaringan — instalasi jaringan, konfigurasi Mikrotik & Cisco, routing dasar.</p>
+  </div>
+  <div class="edu-card">
+    <h3>SMK Teknik Komputer Jaringan</h3>
+    <div class="meta">SMK TUNAS HARAPAN, PATI • JUN 2020 - JUL 2023</div>
+    <p>Spesialisasi topologi jaringan Cisco, konfigurasi Mikrotik (NAT, DHCP, firewall), troubleshooting jaringan.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Elsa Sukma Hapsari • Embedded Systems & Robotics Portfolio
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+  },{threshold:0.15});
+  reveals.forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
